@@ -28,11 +28,13 @@ class Graph:
 	def get_vertex(self, key):
 		return self._vertices.get(key, None)
 
-	def add_edge(self, source, to, cost=0):
+	def add_edge(self, source, to, edge_type='directed', cost=0):
 		if source not in self._vertices:
 			self.add_vertex(source)
 		if to not in self._vertices:
 			self.add_vertex(to)
+		if edge_type == 'undirected':
+			self._vertices[to].add_neighbour(self._vertices[source], cost)
 		self._vertices[source].add_neighbour(self._vertices[to], cost)
 
 	def __iter__(self):
