@@ -37,6 +37,13 @@ class Graph:
 			self._vertices[to].add_neighbour(self._vertices[source], cost)
 		self._vertices[source].add_neighbour(self._vertices[to], cost)
 
+	def reverse(self):
+		graph = Graph()
+		for _, vertex in self._vertices.items():
+			for neighbour in vertex.connections():
+				graph.add_edge(neighbour.id, vertex.id)
+		return graph
+
 	def __iter__(self):
 		return iter(self._vertices.values())
 
