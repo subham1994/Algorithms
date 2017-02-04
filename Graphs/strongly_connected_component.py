@@ -36,7 +36,7 @@ def dfs(source, count):
 
 
 def strongly_cc(graph):
-	reverse_postorder = map(lambda v: graph.get_vertex(v.id), list(topological_sort(graph.reverse())))
+	reverse_postorder = map(lambda v: graph.get_vertex(v.id), topological_sort(graph.reverse()))
 	for index, vertex in enumerate(reverse_postorder):
 		if vertex.color == 'white':
 			dfs(vertex, index)
