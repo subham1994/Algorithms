@@ -21,7 +21,7 @@ def dfs(source, count):
 		if neighbour.color == 'white':
 			neighbour.parent = source
 			dfs(neighbour, count)
-	neighbour.color = 'black'
+	source.color = 'black'
 
 
 def main():
