@@ -1,6 +1,6 @@
 from queue import Queue
 
-from Graphs.graph_builder import build_directed_graph
+from Graphs.graph_builder import build_directed_acyclic_graph
 
 
 def bfs(source):
@@ -31,12 +31,12 @@ def dfs(source):
 
 def main():
 	# build directed graph for dfs
-	_, dfs_source = build_directed_graph()
+	_, dfs_source = build_directed_acyclic_graph()
 	assert dfs_source
 	dfs(dfs_source)
 
 	# build directed graph for bfs
-	_, bfs_source = build_directed_graph()
+	_, bfs_source = build_directed_acyclic_graph()
 	assert bfs_source
 	bfs(bfs_source)
 

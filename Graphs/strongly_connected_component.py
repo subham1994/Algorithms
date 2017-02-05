@@ -1,4 +1,4 @@
-from Graphs.graph_builder import build_directed_graph
+from Graphs.graph_builder import build_directed_cyclic_graph
 from Graphs.topological_sort import topological_sort
 
 
@@ -43,7 +43,7 @@ def strongly_cc(graph):
 
 
 def main():
-	graph, _ = build_directed_graph()
+	graph, _ = build_directed_cyclic_graph()
 	strongly_cc(graph)
 	assert strongly_connected(graph.get_vertex('v'), graph.get_vertex('x'))
 	assert strongly_connected(graph.get_vertex('v'), graph.get_vertex('y'))

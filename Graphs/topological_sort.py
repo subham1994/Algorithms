@@ -1,4 +1,5 @@
-from Graphs.graph_builder import build_directed_graph
+from Graphs.graph_builder import build_directed_acyclic_graph
+from Graphs.cycle import DirectedGraphCycleDetector
 
 
 def dfs(source, postorder):
@@ -19,7 +20,10 @@ def topological_sort(graph):
 
 
 def main():
-	graph, _ = build_directed_graph()
+	graph, _ = build_directed_acyclic_graph()
+
+	assert not DirectedGraphCycleDetector(graph).detected_cycle()
+	graph.reset()
 	print(list(topological_sort(graph)))
 
 if __name__ == '__main__':

@@ -1,7 +1,18 @@
 from Graphs.graph import Graph
 
 
-def build_directed_graph():
+def build_directed_acyclic_graph():
+	graph = Graph()
+	graph.add_edge('u', 'v')
+	graph.add_edge('v', 'y')
+	graph.add_edge('y', 'x')
+	graph.add_edge('u', 'x')
+	graph.add_edge('w', 'y')
+	graph.add_edge('w', 'z')
+	return graph, graph.get_vertex('u')
+
+
+def build_directed_cyclic_graph():
 	graph = Graph()
 	graph.add_edge('u', 'v')
 	graph.add_edge('v', 'y')
