@@ -21,6 +21,12 @@ class Graph:
 		self._vertices = {}
 		self._num_vertices = 0
 
+	def reset(self):
+		for _, vertex in self._vertices.items():
+			vertex.color = 'white'
+			vertex.parent = None
+			vertex.distance = float('inf')
+
 	def add_vertex(self, key):
 		self._vertices[key] = Vertex(key)
 		self._num_vertices += 1
