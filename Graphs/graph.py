@@ -9,11 +9,22 @@ class Vertex:
 	def add_neighbour(self, neighbour, weight):
 		self._neighbours[neighbour] = weight
 
+	def get_weight(self, neighbour):
+		return self._neighbours[neighbour]
+
 	def connections(self):
 		return self._neighbours.keys()
 
+	def __lt__(self, other):
+		return self.distance < other.distance
+
 	def __repr__(self):
-		return '<Vertex: {id}>'.format(id=self.id)
+		return "<Vertex: (id={id}, distance={distance}, parent={parent}, color={color})>".format(
+			id=self.id,
+			distance=self.distance,
+			parent=self.parent.id if self.parent else None,
+			color=self.color
+		)
 
 
 class Graph:
