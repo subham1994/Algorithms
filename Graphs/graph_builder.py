@@ -25,6 +25,21 @@ def build_directed_cyclic_graph():
 	return graph, graph.get_vertex('u')
 
 
+def build_directed_edge_weighted_graph():
+	graph = Graph()
+	graph.add_edge('s', 't', cost=10)
+	graph.add_edge('s', 'y', cost=5)
+	graph.add_edge('t', 'y', cost=2)
+	graph.add_edge('y', 't', cost=3)
+	graph.add_edge('t', 'x', cost=1)
+	graph.add_edge('y', 'z', cost=2)
+	graph.add_edge('y', 'x', cost=9)
+	graph.add_edge('z', 's', cost=7)
+	graph.add_edge('z', 'x', cost=6)
+	graph.add_edge('x', 'z', cost=4)
+	return graph, graph.get_vertex('s')
+
+
 def build_undirected_graph():
 	graph = Graph()
 	graph.add_edge('u', 'v', 'undirected')
