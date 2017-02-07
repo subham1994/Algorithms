@@ -9,7 +9,6 @@ def mst_prim(graph, source):
 	heapq.heapify(vertex_list)
 	while vertex_list:
 		vertex = heapq.heappop(vertex_list)
-		print(vertex)
 		vertex.color = 'black'
 		for neighbour in vertex.connections():
 			if neighbour.color == 'white' and neighbour.distance > vertex.get_weight(neighbour):
