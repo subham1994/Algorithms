@@ -29,5 +29,6 @@ def main():
 	assert sum(edge.weight for edge in mst_kruskal(graph)) is 37
 	print('All test cases passed !')
 
+
 if __name__ == '__main__':
     main()
