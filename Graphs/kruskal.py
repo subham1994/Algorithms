@@ -26,8 +26,7 @@ def mst_kruskal(graph):
 
 def main():
 	graph, _ = build_undirected_edge_weighted_graph()
-	cost = sum(edge.weight for edge in mst_kruskal(graph))
-	assert cost is 37
+	assert sum(edge.weight for edge in mst_kruskal(graph)) is 37
 	print('All test cases passed !')
 
 if __name__ == '__main__':
