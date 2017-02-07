@@ -1,28 +1,28 @@
 class UnionFind:
 	def __init__(self, graph):
-		self.id = {}
-		self.size = {}
+		self._id = {}
+		self._size = {}
 
 		for vertex in graph:
-			self.id[vertex] = vertex
-			self.size[vertex] = 1
+			self._id[vertex] = vertex
+			self._size[vertex] = 1
 
-	def root(self, u):
-		while self.id[u] != u:
-			self.id[u] = self.id[self.id[u]]
-			u = self.id[u]
+	def _root(self, u):
+		while self._id[u] != u:
+			self._id[u] = self._id[self._id[u]]
+			u = self._id[u]
 		return u
 
 	def find(self, u):
-		return self.find(u)
+		return self._root(u)
 
 	def union(self, u, v):
-		root_u = self.root(u)
-		root_v = self.root(v)
+		root_u = self._root(u)
+		root_v = self._root(v)
 
-		if self.size[root_u] < self.size[root_v]:
-			self.id[root_u] = root_v
-			self.size[root_v] += self.size[root_u]
+		if self._size[root_u] < self._size[root_v]:
+			self._id[root_u] = root_v
+			self._size[root_v] += self._size[root_u]
 		else:
-			self.id[root_v] = root_u
-			self.size[root_u] += self.size[root_v]
+			self._id[root_v] = root_u
+			self._size[root_u] += self._size[root_v]
