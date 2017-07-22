@@ -29,7 +29,7 @@ class Trie:
 			pos = valid_len
 		if valid_len == len(key):
 			return pos
-		return self._longest_prefix_of(root.children.get(key[valid_len]), key, pos, valid_len+1)
+		return self._longest_prefix_of(root.children.get(key[valid_len]), key, pos, valid_len + 1)
 
 	def longest_prefix_of(self, key):
 		length = self._longest_prefix_of(self._root, key)
@@ -58,7 +58,7 @@ class Trie:
 		if pos == len(key):
 			root.value = value
 			return root
-		root.children[key[pos]] = self._put(root.children.get(key[pos]), key, value, pos+1)
+		root.children[key[pos]] = self._put(root.children.get(key[pos]), key, value, pos + 1)
 		return root
 
 	def put(self, key, value):
@@ -73,7 +73,7 @@ class Trie:
 			return
 		for child in root.children:
 			if child == pattern[pos] or pattern[pos] == '.':
-				self._wildcard_match(root.children[child], pattern, matches, word + child, pos+1)
+				self._wildcard_match(root.children[child], pattern, matches, word + child, pos + 1)
 
 	def wildcard_match(self, pattern):
 		matches = []
@@ -106,4 +106,4 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+	main()

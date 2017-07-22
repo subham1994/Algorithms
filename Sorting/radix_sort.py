@@ -1,6 +1,7 @@
 __author__ = 'subham_1994'
 
 
+# noinspection PyTypeChecker
 def counting_sort(nums, bit):
 	counts = [0 for _ in range(10)]
 	den = pow(10, bit)

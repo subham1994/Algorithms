@@ -29,7 +29,7 @@ def main():
 
 	for index, vertex in enumerate(graph):
 		if vertex.color == 'white':
-		    dfs(vertex, index)
+			dfs(vertex, index)
 
 	assert connected(graph.get_vertex('u'), graph.get_vertex('x'))
 	assert connected(graph.get_vertex('u'), graph.get_vertex('v'))
@@ -40,4 +40,4 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+	main()

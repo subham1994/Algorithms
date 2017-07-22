@@ -1,22 +1,20 @@
 from Graphs.graph_builder import build_directed_cyclic_graph
 from Graphs.topological_sort import topological_sort
 
-
 """
 	Kosaraju-Sharir Algorithm:
-        Intuition
-            - Strong components in graph G are same as in reverse(G).
-
-        Method
-            - compute reverse postorder in reverse(G).
-            - run DFS in G, visiting unmarked vertices in reverse postorder of revrese(G).
-
-        Time Complexity:
-            - The above algorithm is linear time, two pass alogrithm. It calls DFS, finds reverse of
-              the graph and again calls DFS. DFS takes O(V+E) for a graph represented using adjacency list.
-              Reversing a graph also takes O(V+E) time.
+		Intuition
+		- Strong components in graph G are same as in reverse(G).
+		
+		Method
+		- compute reverse postorder in reverse(G).
+		- run DFS in G, visiting unmarked vertices in reverse postorder of revrese(G).
+		
+		Time Complexity:
+		- The above algorithm is linear time, two pass alogrithm. It calls DFS, finds reverse of
+		the graph and again calls DFS. DFS takes O(V+E) for a graph represented using adjacency list.
+		Reversing a graph also takes O(V+E) time.
 """
-
 
 ids = {}
 
@@ -53,4 +51,4 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+	main()
