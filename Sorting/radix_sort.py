@@ -32,4 +32,5 @@ def main():
 	print(nums)
 
 
-if __name__ == '__main__': main()
+if __name__ == '__main__':
+	main()

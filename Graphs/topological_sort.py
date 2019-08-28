@@ -26,5 +26,6 @@ def main():
 	graph.reset()
 	print(list(topological_sort(graph)))
 
+
 if __name__ == '__main__':
-    main()
+	main()

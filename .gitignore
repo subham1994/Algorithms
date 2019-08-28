@@ -1,4 +1,4 @@
 .idea/
+.vscode/
 DisjointSet/__pycache__/union_find.cpython-36.pyc
-Graphs/__pycache__/graph.cpython-36.pyc
-Graphs/__pycache__/graph_builder.cpython-36.pyc
+Graphs/__pycache__/*
